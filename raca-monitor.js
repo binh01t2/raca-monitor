@@ -1,7 +1,7 @@
 const request = require('request');
 const chalk = require('chalk');
 
-request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=egg',
+request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&name=egg&order=asc&saleType&category=17&tokenType',
     { json: true }, (err, res, body) => {
         if (err) {
             return console.log(err); }
