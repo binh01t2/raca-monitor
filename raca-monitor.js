@@ -8,6 +8,12 @@ function numberWithCommas(x) {
 function showinfo()
 {	
 	console.log('-------------------------------------------------------------------------------')
+    request('https://api.pancakeswap.info/api/v2/tokens/0x12bb890508c125661e03b09ec06e404bc9289040',
+        { json: true }, (err, res, body) => {
+            if (err) {
+                return console.log(err); }
+            console.log(chalk.yellow('Raca price:') + chalk.red(body['data']['price'] + '$'));
+        });
     request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&name=egg&order=asc&saleType&category=17&tokenType',
         { json: true }, (err, res, body) => {
             if (err) {
