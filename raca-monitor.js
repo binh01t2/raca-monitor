@@ -38,7 +38,7 @@ function showinfo()
         { json: true }, (err, res, body) => {
             if (err) {
                 return console.log(err); }
-            console.log(chalk.magentaBright('Lowest purple diamond price:') + chalk.red(body['list'][0]['fixed_price']));
+            console.log(chalk.white('Lowest purple diamond price:') + chalk.red(body['list'][0]['fixed_price']));
     });
 }
 setInterval(showinfo,10000);
