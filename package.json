@@ -4,6 +4,7 @@
   "description": "",
   "main": "raca-monitor.js",
   "scripts": {
+    "start": "node raca-monitor.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +13,8 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "request": "^2.88.2"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
