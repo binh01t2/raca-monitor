@@ -13,7 +13,7 @@ function showinfo()
             if (err) {
                 return console.log(err); }
             price = parseFloat(body['data']['price']);
-            price = price.toFixed(4);			
+            price = price.toFixed(6);			
             console.log(chalk.yellow('RACA PRICE: ') + chalk.red(price + '$'));
         });
     request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&name=egg&order=asc&saleType&category=17&tokenType',
