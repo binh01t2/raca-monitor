@@ -13,50 +13,50 @@ function showinfo()
             if (err) {
                 return console.log(err); }
             price = parseFloat(body['data']['price']);
-            price = (Math.round(price * 10000) / 10000).toFixed(4);			
-            console.log(chalk.yellow('RACA PRICE:') + chalk.red(price + '$'));
+            price = price.toFixed(4);			
+            console.log(chalk.yellow('RACA PRICE: ') + chalk.red(price + '$'));
         });
     request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&name=egg&order=asc&saleType&category=17&tokenType',
         { json: true }, (err, res, body) => {
             if (err) {
                 return console.log(err); }
-            console.log(chalk.yellow('Lowest egg price:') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])));
+            console.log(chalk.yellow('Lowest egg price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'] + 'RACA')));
         });
     request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=yellow',
         { json: true }, (err, res, body) => {
             if (err) {
                 return console.log(err); }
-            console.log(chalk.green('Lowest yellow diamond price:') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])));
+            console.log(chalk.green('Lowest yellow diamond price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'] + 'RACA')));
         });
     request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=metamon&saleType&category=13&tokenType',
         { json: true }, (err, res, body) => {
             if (err) {
                 return console.log(err); }
-            console.log(chalk.blue('Lowest metamon price:') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])));
+            console.log(chalk.blue('Lowest metamon price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'] + 'RACA')));
     });
     request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=&saleType&category=15&tokenType',
         { json: true }, (err, res, body) => {
             if (err) {
                 return console.log(err); }
-            console.log(chalk.magenta('Lowest potion price:') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])));
+            console.log(chalk.magenta('Lowest potion price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'] + 'RACA')));
     });
     request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=&saleType&category=20&tokenType',
         { json: true }, (err, res, body) => {
             if (err) {
                 return console.log(err); }
-            console.log(chalk.cyan('Lowest KISS land price:') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])));
+            console.log(chalk.cyan('Lowest KISS land price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'] + 'RACA')));
     });
     request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=purple',
         { json: true }, (err, res, body) => {
             if (err) {
                 return console.log(err); }
-            console.log(chalk.white('Lowest purple diamond price:') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])));
+            console.log(chalk.white('Lowest purple diamond price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'] + 'RACA')));
     });
 	request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=&saleType&category=7&tokenType',
         { json: true }, (err, res, body) => {
             if (err) {
                 return console.log(err); }
-            console.log(chalk.cyan('USM Land price:') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])));
+            console.log(chalk.cyan('USM Land price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'] + 'RACA')));
     });
 }
 setInterval(showinfo,10000);
