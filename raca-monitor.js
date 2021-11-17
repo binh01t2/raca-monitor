@@ -25,7 +25,7 @@ function showinfo()
         console.log(error);
     })
     .then(function () {
-        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&name=egg&order=asc&saleType&category=17&tokenType',
+        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=&saleType&category=17&tokenType',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
@@ -33,7 +33,7 @@ function showinfo()
                 item_price *= raca_price;
                 console.log(chalk.yellow('Lowest egg price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])+' ('+numberWithCommas(item_price.toFixed(2))+'$)'));
             });
-        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=yellow',
+        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=&saleType&category=16&tokenType',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
@@ -41,7 +41,7 @@ function showinfo()
                 item_price *= raca_price;
                 console.log(chalk.green('Lowest yellow diamond price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])+' ('+numberWithCommas(item_price.toFixed(2))+'$)'));
             });
-        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=metamon&saleType&category=13&tokenType',
+        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=&saleType&category=13&tokenType',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
@@ -49,7 +49,7 @@ function showinfo()
                 item_price *= raca_price;
                 console.log(chalk.blue('Lowest metamon price: ')+ chalk.red(numberWithCommas(body['list'][0]['fixed_price'])+' ('+numberWithCommas(item_price.toFixed(2))+'$)'));
         });
-        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=&saleType&category=15&tokenType',
+        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=potion',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
@@ -57,7 +57,7 @@ function showinfo()
                 item_price *= raca_price;
                 console.log(chalk.magenta('Lowest potion price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])+' ('+numberWithCommas(item_price.toFixed(2))+'$)'));
         });
-        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=&saleType&category=20&tokenType',
+        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=&saleType&category=20&tokenType',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
@@ -65,15 +65,15 @@ function showinfo()
                 item_price *= raca_price;
                 console.log(chalk.cyan('Lowest KISS land price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])+' ('+numberWithCommas(item_price.toFixed(2))+'$)'));
         });
-        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=purple',
-            { json: true }, (err, res, body) => {
-                if (err) {
-                    return console.log(err); }
-                item_price = parseFloat(body['list'][0]['fixed_price'])
-                item_price *= raca_price;
-                console.log(chalk.white('Lowest purple diamond price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])+' ('+numberWithCommas(item_price.toFixed(2))+'$)'));
-        });
-        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=&saleType&category=7&tokenType',
+        // request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=purple',
+        //     { json: true }, (err, res, body) => {
+        //         if (err) {
+        //             return console.log(err); }
+        //         item_price = parseFloat(body['list'][0]['fixed_price'])
+        //         item_price *= raca_price;
+        //         console.log(chalk.white('Lowest purple diamond price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])+' ('+numberWithCommas(item_price.toFixed(2))+'$)'));
+        // });
+        request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=&saleType&category=7&tokenType',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
