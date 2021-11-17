@@ -29,41 +29,41 @@ function showinfo()
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
-                item_price = parseFloat(body['list'][0]['fixed_price'])
-                item_price *= raca_price;
-                console.log(chalk.yellow('Lowest egg price: ') + chalk.red(numberWithCommas(parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count']))+' ('+numberWithCommas(item_price.toFixed(0))+'$)'));
+                item_raca_price = parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count'])
+                item_dollar_price = item_raca_price * raca_price;
+                console.log(chalk.yellow('Lowest egg price: ') + chalk.red(numberWithCommas(item_raca_price)+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));
             });
         request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=&saleType&category=16&tokenType',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
-                item_price = parseFloat(body['list'][0]['fixed_price'])
-                item_price *= raca_price;
-                console.log(chalk.green('Lowest yellow diamond price: ') + chalk.red(numberWithCommas(parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count']))+' ('+numberWithCommas(item_price.toFixed(0))+'$)'));
+                item_raca_price = parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count'])
+                item_dollar_price = item_raca_price * raca_price;
+                console.log(chalk.green('Lowest yellow diamond price: ') + chalk.red(numberWithCommas(item_raca_price)+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));
             });
         request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=&saleType&category=13&tokenType',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
-                item_price = parseFloat(body['list'][0]['fixed_price'])
-                item_price *= raca_price;
-                console.log(chalk.blue('Lowest metamon price: ')+ chalk.red(numberWithCommas(parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count']))+' ('+numberWithCommas(item_price.toFixed(0))+'$)'));
+                item_raca_price = parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count'])
+                item_dollar_price = item_raca_price * raca_price;
+                console.log(chalk.blue('Lowest metamon price: ')+ chalk.red(numberWithCommas(item_raca_price)+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));
         });
         request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=potion',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
-                item_price = parseFloat(body['list'][0]['fixed_price'])
-                item_price *= raca_price;
-                console.log(chalk.magenta('Lowest potion price: ') + chalk.red(numberWithCommas(parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count']))+' ('+numberWithCommas(item_price.toFixed(0))+'$)'));
+                item_raca_price = parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count'])
+                item_dollar_price = item_raca_price * raca_price;
+                console.log(chalk.magenta('Lowest potion price: ') + chalk.red(numberWithCommas(item_raca_price)+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));
         });
         request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=&saleType&category=20&tokenType',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
-                item_price = parseFloat(body['list'][0]['fixed_price'])
-                item_price *= raca_price;
-                console.log(chalk.cyan('Lowest KISS land price: ') + chalk.red(numberWithCommas(parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count']))+' ('+numberWithCommas(item_price.toFixed(0))+'$)'));
+                item_raca_price = parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count'])
+                item_dollar_price = item_raca_price * raca_price;
+                console.log(chalk.cyan('Lowest KISS land price: ') + chalk.red(numberWithCommas(item_raca_price)+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));
         });
         // request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=purple',
         //     { json: true }, (err, res, body) => {
@@ -71,15 +71,15 @@ function showinfo()
         //             return console.log(err); }
         //         item_price = parseFloat(body['list'][0]['fixed_price'])
         //         item_price *= raca_price;
-        //         console.log(chalk.white('Lowest purple diamond price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])+' ('+numberWithCommas(item_price.toFixed(0))+'$)'));
+        //         console.log(chalk.white('Lowest purple diamond price: ') + chalk.red(numberWithCommas(body['list'][0]['fixed_price'])+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));
         // });
         request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=single_price&order=asc&name=&saleType&category=7&tokenType',
             { json: true }, (err, res, body) => {
                 if (err) {
                     return console.log(err); }
-                item_price = parseFloat(body['list'][0]['fixed_price'])
-                item_price *= raca_price;
-                console.log(chalk.cyan('USM Land price: ') + chalk.red(numberWithCommas(parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count']))+' ('+numberWithCommas(item_price.toFixed(0))+'$)'));
+                item_raca_price = parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count'])
+                item_dollar_price = item_raca_price * raca_price;
+                console.log(chalk.cyan('USM Land price: ') + chalk.red(numberWithCommas(item_raca_price)+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));
         });
     });
 }
