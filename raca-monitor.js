@@ -65,6 +65,22 @@ function showinfo()
                 item_dollar_price = item_raca_price * raca_price;
                 console.log(chalk.cyan('Lowest KISS land price: ') + chalk.red(numberWithCommas(item_raca_price)+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));
         });
+		request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=&saleType&category=34&tokenType',
+            { json: true }, (err, res, body) => {
+                if (err) {
+                    return console.log(err); }
+                item_raca_price = parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count'])
+                item_dollar_price = item_raca_price * raca_price;
+                console.log(chalk.red('Lowest Havard N land price: ') + chalk.red(numberWithCommas(item_raca_price)+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));                
+        });
+		request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=&saleType&category=8&tokenType',
+            { json: true }, (err, res, body) => {
+                if (err) {
+                    return console.log(err); }
+                item_raca_price = parseFloat(body['list'][0]['fixed_price'])/parseFloat(body['list'][0]['count'])
+                item_dollar_price = item_raca_price * raca_price;
+                console.log(chalk.yellow('Metamon N land price: ') + chalk.red(numberWithCommas(item_raca_price)+' ('+numberWithCommas(item_dollar_price.toFixed(0))+'$)'));                
+        });
         // request('https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=20&sortBy=fixed_price&order=asc&name=purple',
         //     { json: true }, (err, res, body) => {
         //         if (err) {
